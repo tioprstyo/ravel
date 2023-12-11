@@ -14,7 +14,7 @@ const Review = () => {
     const [searchTours, setSearchTours] = useState<string>('');
 
     useEffect(() => {
-        const getNewTours = () => {
+        const getTourList = () => {
             return api.get(`/api/v1/tours?search=${searchTours}`)
                 .then(function (result) {
                     setTours(result?.data)
@@ -22,7 +22,7 @@ const Review = () => {
                     console.log(err);
                 });
         }
-        getNewTours();
+        getTourList();
         setProfil(Object.keys(getUserProfile).length > 0 ? getUserProfile : profiles);
         setTours(toursList);
     // eslint-disable-next-line react-hooks/exhaustive-deps

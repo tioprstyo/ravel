@@ -17,8 +17,8 @@ const Header = () => {
     const [dropdown, setDropdown] = useState<boolean>(false);
 
     useEffect(() => {
-        const getNewTours = () => {
-            return api.get('/api/v1/tours/new-tour')
+        const getUsers = () => {
+            return api.get('/api/v1/users')
                 .then(function (result) {
                     if (result.status !== 'success' && result.message === 'Token Tidak Valid') {
                         setSessionRemove();
@@ -28,7 +28,7 @@ const Header = () => {
                     console.log(err);
                 });
         }
-        getNewTours();
+        getUsers();
         setProfil(Object.keys(getUserProfile).length > 0 ? getUserProfile: profiles);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
