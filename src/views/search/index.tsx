@@ -38,8 +38,8 @@ const Review = () => {
     return (
         <div className='md:px-16 md:py-14 px-3 py-3'>
             <div className='flex flex-col items-center font-semibold mx-auto w-full'>
-                <h1 data-cy='h-search-page' className='md:text-4xl text-lg'>Halo, <span className='text-ravel-green-400'>{profil.name}</span></h1>
-                <div className='md:text-3xl text-md mt-3'>Kemana Kau Ingin Pergi?</div>
+                <h1 data-cy='h-search-page' className='md:text-4xl text-xl'>Halo, <span className='text-ravel-green-400'>{profil.name}</span></h1>
+                <div className='md:text-3xl text-lg md:mt-3 mt-1'>Kemana Kau Ingin Pergi?</div>
                 <div className='w-full border border-ravel-gray-200 rounded-md px-2 max-w-[400px] mt-8 flex py-2'>
                     <input type='text' placeholder='Masukan Tujuanmu' data-cy='input-search-tour' className='mr-1 text-base outline-none w-full font-thin' value={searchTours} onChange={onChangeSearch} />
                     <button className='w-[15px] h-[14px] self-center'>
@@ -53,9 +53,9 @@ const Review = () => {
             <div className='divide-y-2 divide-ravel-gray-100'>
                 {
                     tours && tours.map((e: ToursProps, i: number) => (
-                        <Link to='/search/detail' className='flex md:flex-nowrap flex-wrap py-10' key={i}>
-                            <img src={e.image} alt={`${e.name} is Broken`} data-cy={`tour-image-${i}`} className='w-[242px] h-[198px] object-cover md:mr-5 rounded-3xl' />
-                                <div className='text-sm'>
+                        <Link to={`/search/detail/${e._id}`}  className='flex md:flex-nowrap flex-wrap py-10' key={i}>
+                            <img src={e.image} alt={`${e.name} is Broken`} data-cy={`tour-image-${i}`} className='md:w-[242px] md:h-[198px] w-full h-auto object-cover md:mr-5 rounded-3xl' />
+                                <div className='text-sm md:mt-0 mt-5'>
                                     <h3 className='font-bold' data-cy={`tour-title-${i}`}>{e.name}, <span className='text-ravel-green-400'>{e.slug}!</span></h3>
                                     <p className='mt-3' data-cy={`tour-desc-${i}`}>{e.description}</p>
                                 <p className='mt-3 font-bold' data-cy={`tour-price-${i}`}>Mulai dari : Rp.{e.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</p>

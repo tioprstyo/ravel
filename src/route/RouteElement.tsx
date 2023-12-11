@@ -51,7 +51,7 @@ const RouteElement = () => {
                 }
             />
             <Route
-                path='/search/detail'
+                path='/search/detail/:id'
                 element={
                     <ProtectedRoute isAllowed={isLogin ? true : false} redirectTo='/login'>
                         <SearchDetail />

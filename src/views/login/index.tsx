@@ -117,7 +117,7 @@ const Login = () => {
                                         </label>
                                     </div>
                                     <div className='w-full mt-5'>
-                                        <input type='submit' value='Login' data-cy='btn-login' className='cursor-pointer w-full bg-ravel-green-500 p-3 text-white rounded-xl font-semibold text-xl' />
+                                        <input type='submit' value='Login' data-cy='btn-login' className='cursor-pointer w-full bg-ravel-green-500 md:p-3 p-1 text-white rounded-xl font-semibold md:text-xl text-md' />
                                     </div>
                                     <div className='text-center mt-5'>
                                         <p className='font-semibold text-md'>atau</p>

@@ -20,7 +20,7 @@ const OtherDestination = () => {
 
     return (
         <div>
-            <h2 className='text-center font-bold text-4xl md: my-20'><span className='text-ravel-green-400'>Explore</span> Tempat Lainnya</h2>
+            <h2 className='text-center font-bold md:text-4xl text-xl md: my-20'><span className='text-ravel-green-400'>Explore</span> Tempat Lainnya</h2>
             <div className='md:grid-cols-5 md:grid md:gap-10 bg-ravel-gray-50 md:py-20 md:-mx-[64px] -mx-3 md:px-24 px-3'>
                 {
                     otherTours && otherTours.map((e: OtherTours, i: number) => (

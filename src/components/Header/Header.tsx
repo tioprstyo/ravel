@@ -14,6 +14,7 @@ const Header = () => {
     const navigate = useNavigate();
     const profiles = useRecoilValue(profile);
     const [profil, setProfil] = useState<UserProfile>(profiles);
+    const [dropdown, setDropdown] = useState<boolean>(false);
 
     useEffect(() => {
         const getNewTours = () => {
@@ -32,7 +33,14 @@ const Header = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    const onLogout = () => {
+        setSessionRemove();
+        setDropdown(false);
+        navigate('/login');
+    }
+
     return (
+        <>
         <div className='md:grid-cols-3 grid-cols-2 grid md:gap-10 md:py-3 md:px-10 p-3 shadow-lg sticky w-full bg-white top-0 left-0'>
             <Link to='/' className='flex cursor-pointer'>
                 <img src={Logo} alt='ravel-logo' className='md:w-[45px] md:h-[40px] w-[30px] h-[25px] self-center' data-cy='h-logo' />
@@ -48,7 +56,7 @@ const Header = () => {
             </div>
             {
                 profile && (
-                    <div className='self-center ml-auto' data-cy='h-profile'>
+                    <div className='self-center ml-auto' data-cy='h-profile' onClick={() => setDropdown(!dropdown)}>
                         <div className='md:flex hidden'>
                             <p className='font-thin text-md self-center'>Halo, {profil.name}</p>
                             <img src={UserLogo} alt='' className='w-[30px] h-[30px] ml-3' />
@@ -60,6 +68,14 @@ const Header = () => {
                 )
             }
         </div>
+        {
+            dropdown && (
+                <div className='fixed right-4 md:top-16 top-14 p-3 bg-white border border-ravel-gray-200 rounded-md w-[150px] text-center text-sm cursor-pointer' onClick={() => onLogout()}>
+                    Logout
+                </div>
+            )
+        }
+        </>
     )
 }
 export default Header;

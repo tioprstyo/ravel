@@ -20,11 +20,11 @@ const Review = () => {
     }, []);
     return (
         <div className='flex md:flex-nowrap flex-wrap md:mt-24 mt-10'>
-            <div className='md:mr-5 md:flex-none md:w-fit w-full'>
+            <div className='md:mr-5 md:flex-none md:w-fit w-full mb-5 md:mb-0'>
                 <img src={ReviewProfile} className='w-full md:w-[448px] h-auto object-cover' alt='' />
             </div>
             <div>
-                <h2 className='font-bold text-4xl'>
+                <h2 className='font-bold md:text-4xl text-xl'>
                     Experience Nomor <span className='text-ravel-green-400'>Satu</span>!
                 </h2>
                 <div className='text-md font-bold'>
@@ -34,7 +34,7 @@ const Review = () => {
                     {testimoni?.rateComment}
                 </p>
                 <Link to='/testimoni'>
-                    <button className='flex bg-ravel-green-400 text-white font-bold text-xl py-4 px-6 rounded-2xl mt-14'>
+                    <button className='flex bg-ravel-green-400 text-white font-bold md:text-xl text-sm md:py-4 py-2 md:px-6 px-3 rounded-2xl mt-14'>
                         Testimoni 
                         <span className='self-center ml-3 mt-0.5'>
                         <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512">
